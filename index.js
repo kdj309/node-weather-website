@@ -7,7 +7,7 @@ const { getWeatherstatus } = require("./utils/Weather");
 app.use(express.static(path.join(__dirname, './public')))
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, './templates/views'))
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 hbs.registerPartials(path.join(__dirname, './templates/partials'))
 
@@ -35,9 +35,9 @@ app.get('/weather', (req, res) => {
         if (err) {
             return res.json({ error: err });
         } else {
-            getWeatherstatus(data, (err, data) => {
-                if (err) {
-                    return res.json({ error: err });
+            getWeatherstatus(data, (error, data) => {
+                if (error) {
+                    return res.json({ error: error });
                 }
                 return res.json({
                     ...data

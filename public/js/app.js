@@ -9,7 +9,7 @@ document.getElementById('myform').addEventListener('submit', (e) => {
     para.appendChild(text)
     infodiv.classList.add('addBoxshadow')
     infodiv.appendChild(para)
-    fetch(`/weather?address=${address.value}`).then((res) => res.json()).then((data) => {
+    fetch(`https://joshi-node-weather-website.herokuapp.com/weather?address=${address.value}`).then((res) => res.json()).then((data) => {
         para.style.display = 'none'
         infodiv.classList.add('addBoxshadow')
         const str = ` <div class="Maindetails">

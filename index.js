@@ -27,7 +27,7 @@ app.get('/about', (req, res) => {
     })
 })
 app.get('/')
-app.get('https://joshi-node-weather-website.herokuapp.com/weather', (req, res) => {
+app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.status(404).json({ error: "Address Must be provided" })
     }

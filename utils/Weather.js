@@ -1,7 +1,10 @@
+var fs = require('fs');
 const axios = require("axios")
+var apiData = fs.readFileSync('input.txt').toString().trim().split('\n');
+
 require('dotenv').config()
 exports.getWeatherstatus = ({ latitude, longitude, place } = {}, callback) => {
-    axios.get(`http://api.weatherstack.com/current?access_key=${process.env.WEATHER_STACK_API_KEY}&query=${latitude.toFixed(2)},${longitude.toFixed(2)}`).then((data) => {
+    axios.get(`http://api.weatherstack.com/current?access_key=${apiData[1]}&query=${latitude.toFixed(2)},${longitude.toFixed(2)}`).then((data) => {
         console.log(data);
         callback(undefined, { ...data.data, 'place': place })
     }).catch((err) => {

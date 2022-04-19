@@ -1,6 +1,6 @@
 var fs = require('fs');
 const axios = require("axios")
-var apiData = fs.readFileSync('input.txt').toString().trim().split('\n');
+var apiData = fs.readFileSync('api.txt').toString().trim().split('\n');
 
 require('dotenv').config()
 exports.getWeatherstatus = ({ latitude, longitude, place } = {}, callback) => {

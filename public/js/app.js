@@ -34,7 +34,7 @@ document.getElementById('myform').addEventListener('submit', (e) => {
             <p>Feels like : ${data.current.feelslike}°C</p>
         </div>
     </div>`
-        infodiv.innerHTML += str
+        infodiv.innerHTML = str
     }).catch((err) => {
         let para = document.createElement('p')
         para.classList.add('errormsg')
@@ -42,5 +42,8 @@ document.getElementById('myform').addEventListener('submit', (e) => {
         para.appendChild(text)
         infodiv.classList.add('addBoxshadow')
         infodiv.appendChild(para)
+        setTimeout(() => {
+            para.style.display = 'none'
+        }, 1000);
     })
 })

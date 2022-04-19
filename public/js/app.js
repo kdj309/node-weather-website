@@ -1,4 +1,5 @@
 console.log('Client side javascript file is loaded!')
+//MAPBOX_KEY
 let address = document.getElementById('locationvalue')
 let infodiv = document.getElementsByClassName('weatherdetails')[0]
 document.getElementById('myform').addEventListener('submit', (e) => {
